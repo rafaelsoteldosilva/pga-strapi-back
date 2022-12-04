@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "perfiles",
+  "info": {
+    "singularName": "perfil",
+    "pluralName": "perfiles",
+    "displayName": "Perfil_usuario_administrador",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false,
+    "comment": ""
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre_perfil": {
+      "type": "string"
+    },
+    "cargo": {
+      "type": "string"
+    },
+    "empresa": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::empresa.empresa",
+      "inversedBy": "perfil"
+    },
+    "usuario": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::usuario.usuario",
+      "inversedBy": "perfil_usuarios_administradores"
+    }
+  }
+}

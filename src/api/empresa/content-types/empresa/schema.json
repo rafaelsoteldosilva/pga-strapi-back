@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "empresas",
+  "info": {
+    "singularName": "empresa",
+    "pluralName": "empresas",
+    "displayName": "Empresa",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false,
+    "comment": ""
+  },
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "rut": {
+      "type": "string"
+    },
+    "perfil": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::perfil.perfil",
+      "mappedBy": "empresa"
+    }
+  }
+}

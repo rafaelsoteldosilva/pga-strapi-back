@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "usuarios",
+  "info": {
+    "singularName": "usuario",
+    "pluralName": "usuarios",
+    "displayName": "Usuario",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false,
+    "comment": ""
+  },
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "rut": {
+      "type": "string"
+    },
+    "perfil_usuarios_administradores": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::perfil.perfil",
+      "mappedBy": "usuario"
+    }
+  }
+}
