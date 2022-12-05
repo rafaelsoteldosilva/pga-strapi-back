@@ -5,7 +5,7 @@ module.exports = {
     let stopCreation = false;
     const { data, where, select, populate } = event.params;
     let companyEntry, usuarioEntry;
-    console.log("data.empresa:: ", data.empresa);
+    // console.log("data.empresa:: ", data.empresa);
     try {
       perfilEntry = await strapi.entityService.findMany("api::perfil.perfil", {
         filters: {
@@ -13,18 +13,9 @@ module.exports = {
         },
         populate: "*",
       });
-      console.log("perfilEntry.usuario:: ", perfilEntry[0].usuario.nombre);
+      // console.log("perfilEntry.usuario:: ", perfilEntry[0].usuario.nombre);
       if (perfilEntry.length > 0) {
         stopCreation = true;
-      } else {
-        // usuarioEntry = await strapi.entityService.findMany(
-        //   "api::usuario.usuario",
-        //   {
-        //     filters: {
-        //       empresa: perfil,
-        //     },
-        //   }
-        // );
       }
     } catch (error) {
       console.log(error);
@@ -37,9 +28,3 @@ module.exports = {
     }
   },
 };
-
-// strapi.db.lifecycles.subscribe((event) => {
-//   if (event.action === "beforeCreate") {
-//     throw new ForbiddenError("Some message you want to show in the admin UI");
-//   }
-// });

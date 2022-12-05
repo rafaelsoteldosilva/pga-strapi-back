@@ -4,7 +4,7 @@
   "info": {
     "singularName": "perfil",
     "pluralName": "perfiles",
-    "displayName": "Perfil_usuario_administrador",
+    "displayName": "Perfil",
     "description": ""
   },
   "options": {
@@ -13,7 +13,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "nombre_perfil": {
+    "nombre": {
       "type": "string"
     },
     "cargo": {
@@ -29,7 +29,7 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::usuario.usuario",
-      "inversedBy": "perfil_usuarios_administradores"
+      "inversedBy": "perfil"
     }
   }
 }
